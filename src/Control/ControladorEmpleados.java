@@ -83,7 +83,7 @@ public class ControladorEmpleados {
     public void llenaGrupoCbx(JComboBox jcbxGrupos, String tienda) {
         try {
 
-            String sql = "SELECT gt.nombregrupo FROM citas.grupos_tienda gt JOIN citas.tienda t on t.idtienda = gt.Tienda_idtienda WHERE t.nombre = '"+tienda+"'";
+            String sql = "SELECT gt.nombregrupo FROM citas.grupos_tienda gt JOIN citas.tienda t on t.idtienda = gt.Tienda_idtienda WHERE t.nombre = '" + tienda + "'";
 
             try (
                     Statement st = con.createStatement()) {
@@ -100,7 +100,7 @@ public class ControladorEmpleados {
         }
     }
 
-    public String AgregarNuevoEmpleado(int id, String nombre, String tienda, String grupo) {
+    public String AgregarNuevoEmpleado(int id, String nombre) {
 
         String resultado = "";
 
@@ -108,27 +108,23 @@ public class ControladorEmpleados {
         try {
             Statement st = con.createStatement();
             if (st.executeUpdate(query) > 0) {
-                if(resultado.equals("ok")){
-                    //insertaGrupoEmpleado(tienda, grupo);
                     resultado = "ok";
-                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControladorTiendas.class.getName()).log(Level.SEVERE, null, ex);
         }
         return resultado;
     }
-    
-    public String insertaGrupoEmpleado(String tienda, String grupo){
+
+    public String insertaGrupoEmpleado(String tienda, String grupo) {
         String resultado = "";
-        
-        String query = "INSERT INTO citas.grupo_empleado VALUES((SELECT max(idgrupoempleado+1) from grupo_empleado), (SELECT max(idempleado) from empleado), (SELECT gt.idgrupo FROM GRUPOS_TIENDA GT JOIN TIENDA T ON GT.TIENDA_IDTIENDA=T.IDTIENDA WHERE T.NOMBRE = '"+tienda+"' AND GT.NOMBREGRUPO='"+grupo+"') );";
+
+        String query = "INSERT INTO citas.grupo_empleado VALUES((SELECT max(idgrupoempleado+1) idgrupoempleado from citas.grupo_empleado), (SELECT max(idempleado) idempleado from citas.empleado), (SELECT gt.idgrupo idgrupo FROM citas.GRUPOS_TIENDA GT JOIN citas.TIENDA T ON GT.TIENDA_IDTIENDA=T.IDTIENDA WHERE T.NOMBRE = '"+tienda+"' AND GT.NOMBREGRUPO='"+grupo+"')"
+                + ")";
         try {
             Statement st = con.createStatement();
             if (st.executeUpdate(query) > 0) {
-                if(resultado.equals("ok")){
-                    insertaGrupoEmpleado(tienda, grupo);
-                }
+                resultado = "ok";
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControladorTiendas.class.getName()).log(Level.SEVERE, null, ex);

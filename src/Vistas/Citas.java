@@ -789,10 +789,13 @@ public class Citas extends javax.swing.JFrame {
         String tiendaEmpleado = this.jcbxTiendas.getSelectedItem().toString();
         String grupoEmpleado = this.jcbxGrupos.getSelectedItem().toString();
         
-        String respuesta = ctrEmpleados.AgregarNuevoEmpleado(idEmpleado, nombreEmpleado, tiendaEmpleado, grupoEmpleado);
+        String respuesta = ctrEmpleados.AgregarNuevoEmpleado(idEmpleado, nombreEmpleado);
          if (respuesta.equals("ok")) {
-             //System.out.println("ingreso ok");
-            ctrEmpleados.llenarTablaEmpleados(this.jtblEmpleados);    
+            System.out.println("empleado ok, asisgnando grupo ...");
+            if(ctrEmpleados.insertaGrupoEmpleado(tiendaEmpleado, grupoEmpleado).equals("ok"))
+                 System.out.println("asignacion grupos ok");
+                ctrEmpleados.llenarTablaEmpleados(this.jtblEmpleados);  
+                limpiarFieldsEmpleados();
         }
         
         
@@ -816,6 +819,12 @@ public class Citas extends javax.swing.JFrame {
         this.txtDescripcion.setText("");
         this.txtIdProducto.setText("");
         this.txtPrecio.setText("");
+    }
+    public void limpiarFieldsEmpleados(){
+        this.txtidEmpleado.setText("");
+        this.txtNombreEmpleado.setText("");
+        this.jcbxGrupos.setSelectedIndex(0);
+        this.jcbxTiendas.setSelectedIndex(0);
     }
     public static void main(String args[]) {
 
