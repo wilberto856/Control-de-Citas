@@ -529,19 +529,9 @@ public class Citas extends javax.swing.JFrame {
         jPanel5.add(btnAgregarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, -1, -1));
 
         btnEliminarEmpleado.setText("Eliminar");
-        btnEliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarEmpleadoActionPerformed(evt);
-            }
-        });
         jPanel5.add(btnEliminarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, -1, -1));
 
         btnEditarEmpleado.setText("Editar");
-        btnEditarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarEmpleadoActionPerformed(evt);
-            }
-        });
         jPanel5.add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, -1, -1));
 
         jcbxTiendas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Tienda" }));
@@ -791,27 +781,20 @@ public class Citas extends javax.swing.JFrame {
         
         String respuesta = ctrEmpleados.AgregarNuevoEmpleado(idEmpleado, nombreEmpleado);
          if (respuesta.equals("ok")) {
-            System.out.println("empleado ok, asisgnando grupo ...");
-            if(ctrEmpleados.insertaGrupoEmpleado(tiendaEmpleado, grupoEmpleado).equals("ok"))
-                 System.out.println("asignacion grupos ok");
+            
+            if(ctrEmpleados.insertaGrupoEmpleado(tiendaEmpleado, grupoEmpleado).equals("ok")){
                 ctrEmpleados.llenarTablaEmpleados(this.jtblEmpleados);  
                 limpiarFieldsEmpleados();
+            }
+                
         }
         
         
         
     }//GEN-LAST:event_btnAgregarEmpleadoActionPerformed
 
-    private void btnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarEmpleadoActionPerformed
-
-    private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
-
     private void jcbxTiendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxTiendasActionPerformed
-            System.out.println(jcbxTiendas.getSelectedItem().toString());
+            
             ctrEmpleados.llenaGrupoCbx(jcbxGrupos, jcbxTiendas.getSelectedItem().toString());
     }//GEN-LAST:event_jcbxTiendasActionPerformed
 
