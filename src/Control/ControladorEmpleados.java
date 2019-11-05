@@ -100,20 +100,39 @@ public class ControladorEmpleados {
         }
     }
 
-    public String AgregarNuevaTienda(int id, String nombre) {
+    public String AgregarNuevoEmpleado(int id, String nombre, String tienda, String grupo) {
 
         String resultado = "";
 
-        String query = "INSERT INTO citas.tienda VALUES (" + id + ",'" + nombre + "')";
+        String query = "INSERT INTO citas.empleado VALUES (" + id + ",'" + nombre + "')";
         try {
             Statement st = con.createStatement();
             if (st.executeUpdate(query) > 0) {
-                resultado = "ok";
+                if(resultado.equals("ok")){
+                    //insertaGrupoEmpleado(tienda, grupo);
+                    resultado = "ok";
+                }
             }
         } catch (SQLException ex) {
             Logger.getLogger(ControladorTiendas.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        return resultado;
+    }
+    
+    public String insertaGrupoEmpleado(String tienda, String grupo){
+        String resultado = "";
+        
+        String query = "INSERT INTO citas.grupo_empleado VALUES((SELECT max(idgrupoempleado+1) from grupo_empleado), (SELECT max(idempleado) from empleado), (SELECT gt.idgrupo FROM GRUPOS_TIENDA GT JOIN TIENDA T ON GT.TIENDA_IDTIENDA=T.IDTIENDA WHERE T.NOMBRE = '"+tienda+"' AND GT.NOMBREGRUPO='"+grupo+"') );";
+        try {
+            Statement st = con.createStatement();
+            if (st.executeUpdate(query) > 0) {
+                if(resultado.equals("ok")){
+                    insertaGrupoEmpleado(tienda, grupo);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorTiendas.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return resultado;
     }
 

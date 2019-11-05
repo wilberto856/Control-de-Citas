@@ -68,8 +68,8 @@ public class Citas extends javax.swing.JFrame {
         jtblEmpleados = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        txtidEmpleado = new javax.swing.JTextField();
+        txtNombreEmpleado = new javax.swing.JTextField();
         btnAgregarEmpleado = new javax.swing.JButton();
         btnEliminarEmpleado = new javax.swing.JButton();
         btnEditarEmpleado = new javax.swing.JButton();
@@ -517,8 +517,8 @@ public class Citas extends javax.swing.JFrame {
 
         jLabel14.setText("Nombre:");
         jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(562, 202, -1, -1));
-        jPanel5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 161, 53, -1));
-        jPanel5.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 199, 247, -1));
+        jPanel5.add(txtidEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 161, 53, -1));
+        jPanel5.add(txtNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 199, 247, -1));
 
         btnAgregarEmpleado.setText("Agregar");
         btnAgregarEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -784,7 +784,19 @@ public class Citas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnAgregarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEmpleadoActionPerformed
-            
+        int idEmpleado = Integer.parseInt(this.txtidEmpleado.getText().trim());
+        String nombreEmpleado =  this.txtNombreEmpleado.getText().trim();
+        String tiendaEmpleado = this.jcbxTiendas.getSelectedItem().toString();
+        String grupoEmpleado = this.jcbxGrupos.getSelectedItem().toString();
+        
+        String respuesta = ctrEmpleados.AgregarNuevoEmpleado(idEmpleado, nombreEmpleado, tiendaEmpleado, grupoEmpleado);
+         if (respuesta.equals("ok")) {
+             //System.out.println("ingreso ok");
+            ctrEmpleados.llenarTablaEmpleados(this.jtblEmpleados);    
+        }
+        
+        
+        
     }//GEN-LAST:event_btnAgregarEmpleadoActionPerformed
 
     private void btnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleadoActionPerformed
@@ -868,8 +880,6 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JComboBox<String> jcbxGrupos;
     private javax.swing.JComboBox<String> jcbxTiendas;
     private javax.swing.JLabel jlbTitulo;
@@ -883,8 +893,10 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdCliente;
     private javax.swing.JTextField txtIdProducto;
     private javax.swing.JTextField txtNombreCliente;
+    private javax.swing.JTextField txtNombreEmpleado;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtTiendaId;
     private javax.swing.JTextField txtTiendaNombre;
+    private javax.swing.JTextField txtidEmpleado;
     // End of variables declaration//GEN-END:variables
 }
