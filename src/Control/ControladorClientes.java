@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -57,5 +59,53 @@ public class ControladorClientes {
             System.out.println("Error en cargar datos desde DB");
         }
         
+    }
+    
+     public String AgregarNuevoCliente(int id, String nombre, String direccion){
+        String resultado ="";
+        
+        String query = "INSERT INTO citas.cliente VALUES ("+id+",'"+nombre+"', '"+direccion+"')";
+        try {
+            Statement st= con.createStatement();
+            if(st.executeUpdate(query)>0){
+                resultado = "ok";
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorTiendas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return resultado;
+    }
+    
+    public String DeleteCliente(int id){
+        String resultado ="";
+        
+        String query = "DELETE FROM citas.cliente WHERE idCliente = "+id;
+        try {
+            Statement st= con.createStatement();
+            if(st.executeUpdate(query)>0){
+                resultado = "ok";
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorTiendas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return resultado;
+    }
+    
+    public String UpdtateCliente(int id, String nombre, String direccion){
+        String resultado ="";
+        
+        String query = "UPDATE citas.cliente SET nombre='"+nombre+"', direccion = '"+direccion+"' WHERE ="+id+"";
+        try {
+            Statement st= con.createStatement();
+            if(st.executeUpdate(query)>0){
+                resultado = "ok";
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ControladorTiendas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return resultado;
     }
 }

@@ -43,12 +43,12 @@ public class Citas extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txtIdCliente = new javax.swing.JTextField();
+        txtNombreCliente = new javax.swing.JTextField();
+        txtDireccionCliente = new javax.swing.JTextField();
+        btnAgregarCliente = new javax.swing.JButton();
+        btnEliminarCliente = new javax.swing.JButton();
+        btnEditarCliente = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -56,12 +56,12 @@ public class Citas extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        txtIdProducto = new javax.swing.JTextField();
+        txtDescripcion = new javax.swing.JTextField();
+        txtPrecio = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -70,12 +70,12 @@ public class Citas extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        btnAgregarEmpleado = new javax.swing.JButton();
+        btnEliminarEmpleado = new javax.swing.JButton();
+        btnEditarEmpleado = new javax.swing.JButton();
+        jcbxTiendas = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jcbxGrupos = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -271,6 +271,11 @@ public class Citas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jtblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtblClientesMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jtblClientes);
         if (jtblClientes.getColumnModel().getColumnCount() > 0) {
             jtblClientes.getColumnModel().getColumn(0).setResizable(false);
@@ -284,11 +289,26 @@ public class Citas extends javax.swing.JFrame {
 
         jLabel9.setText("Direccion:");
 
-        jButton1.setText("Agregar");
+        btnAgregarCliente.setText("Agregar");
+        btnAgregarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarClienteActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Eliminar");
+        btnEliminarCliente.setText("Eliminar");
+        btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarClienteActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Editar");
+        btnEditarCliente.setText("Editar");
+        btnEditarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarClienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -297,35 +317,39 @@ public class Citas extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextField3))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addGap(60, 60, 60)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(jButton1)
+                                .addGap(79, 79, 79)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jLabel9)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(txtDireccionCliente))
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                                        .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(163, 163, 163))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnAgregarCliente)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)
+                                .addComponent(btnEliminarCliente)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton3)))
-                        .addGap(0, 83, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(btnEditarCliente)
+                                .addGap(84, 84, 84))))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,23 +362,23 @@ public class Citas extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
+                        .addGap(108, 108, 108)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
+                            .addComponent(txtDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
+                            .addComponent(btnAgregarCliente)
+                            .addComponent(btnEliminarCliente)
+                            .addComponent(btnEditarCliente))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -381,11 +405,26 @@ public class Citas extends javax.swing.JFrame {
 
         jLabel12.setText("Precio:");
 
-        jButton4.setText("Agregar");
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Eliminar");
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Editar");
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -402,21 +441,21 @@ public class Citas extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(63, 63, 63)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel12))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                    .addComponent(jTextField6)))
+                                    .addComponent(txtDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                                    .addComponent(txtPrecio)))
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jButton4)
+                                .addComponent(btnAgregar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5)
+                                .addComponent(btnEliminar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton6)))
+                                .addComponent(btnEditar)))
                         .addGap(0, 99, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -434,20 +473,20 @@ public class Citas extends javax.swing.JFrame {
                         .addGap(190, 190, 190)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6))
+                            .addComponent(btnAgregar)
+                            .addComponent(btnEliminar)
+                            .addComponent(btnEditar))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -481,23 +520,43 @@ public class Citas extends javax.swing.JFrame {
         jPanel5.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 161, 53, -1));
         jPanel5.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 199, 247, -1));
 
-        jButton7.setText("Agregar");
-        jPanel5.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, -1, -1));
+        btnAgregarEmpleado.setText("Agregar");
+        btnAgregarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnAgregarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, -1, -1));
 
-        jButton8.setText("Eliminar");
-        jPanel5.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, -1, -1));
+        btnEliminarEmpleado.setText("Eliminar");
+        btnEliminarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnEliminarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 330, -1, -1));
 
-        jButton9.setText("Editar");
-        jPanel5.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, -1, -1));
+        btnEditarEmpleado.setText("Editar");
+        btnEditarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarEmpleadoActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnEditarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Tienda" }));
-        jPanel5.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 237, 198, -1));
+        jcbxTiendas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Tienda" }));
+        jcbxTiendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbxTiendasActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jcbxTiendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 237, 198, -1));
 
         jLabel17.setText("Tienda:");
         jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(562, 240, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Grupo" }));
-        jPanel5.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 275, 198, -1));
+        jcbxGrupos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Grupo" }));
+        jPanel5.add(jcbxGrupos, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 275, 198, -1));
 
         jLabel18.setText("Grupo:");
         jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(562, 278, -1, -1));
@@ -548,15 +607,16 @@ public class Citas extends javax.swing.JFrame {
     ControladorEmpleados ctrEmpleados = new ControladorEmpleados();
     ControladorProductos ctrProductos = new ControladorProductos();
     ControladorReportes ctrReportes = new ControladorReportes();
-    
+
 
     private void panelPrincipalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_panelPrincipalStateChanged
-
-        int panel = this.panelPrincipal.getSelectedIndex();
         
-        switch(panel){
+        System.out.println(this.panelPrincipal.getSelectedIndex());
+        int panel = this.panelPrincipal.getSelectedIndex();
+
+        switch (panel) {
             case 0:
-                
+
             case 1:
                 ctr.llenatablaTiendas(this.jtblTiendas);
                 break;
@@ -564,17 +624,26 @@ public class Citas extends javax.swing.JFrame {
                 ctrCliente.llenatablaClientes(this.jtblClientes);
                 break;
             case 3:
-                ctrCliente.llenatablaClientes(this.jtblClientes);
+                ctrProductos.llenarTablaProductos(this.jtblProductos);
                 break;
+            case 4:
+                ctrEmpleados.llenarTablaEmpleados(this.jtblEmpleados);
+                ctrEmpleados.llenaTiendasCbx(this.jcbxTiendas);
+                break;
+            case 5:
+               
+                break;
+            case 6:
                 
+                
+
         }
-                
-       
-        
+
+
     }//GEN-LAST:event_panelPrincipalStateChanged
 
     private void btnAgregarTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTiendaActionPerformed
-        
+
         int idTienda = Integer.parseInt(this.txtTiendaId.getText().trim());
         String nombreTienda = this.txtTiendaNombre.getText().trim();
 
@@ -626,6 +695,116 @@ public class Citas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    public void limpiarFieldsCliente() {
+        this.txtIdCliente.setText("");
+        this.txtNombreCliente.setText("");
+        this.txtDireccionCliente.setText("");
+    }
+    private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
+        int idCliente = Integer.parseInt(this.txtIdCliente.getText().trim());
+        String nombreCliente = this.txtNombreCliente.getText().trim();
+        String direccionCliente = this.txtDireccionCliente.getText().trim();
+
+        String respuesta = ctrCliente.AgregarNuevoCliente(idCliente, nombreCliente, direccionCliente);
+
+        if (respuesta.equals("ok")) {
+            ctrCliente.llenatablaClientes(this.jtblClientes);
+            limpiarFieldsCliente();
+        }
+
+    }//GEN-LAST:event_btnAgregarClienteActionPerformed
+
+    private void jtblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtblClientesMouseClicked
+        int row = this.jtblClientes.getSelectedRow();
+        this.txtIdCliente.setText(this.jtblClientes.getValueAt(row, 0).toString());
+        this.txtNombreCliente.setText(this.jtblClientes.getValueAt(row, 1).toString());
+        this.txtDireccionCliente.setText(this.jtblClientes.getValueAt(row, 2).toString());
+    }//GEN-LAST:event_jtblClientesMouseClicked
+
+    private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
+
+        int idCliente = Integer.parseInt(this.txtIdCliente.getText().trim());
+
+        String respuesta = ctrCliente.DeleteCliente(idCliente);
+
+        if (respuesta.equals("ok")) {
+            ctrCliente.llenatablaClientes(this.jtblClientes);
+            limpiarFieldsCliente();
+        }
+    }//GEN-LAST:event_btnEliminarClienteActionPerformed
+
+    private void btnEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarClienteActionPerformed
+        int idCliente = Integer.parseInt(this.txtIdCliente.getText().trim());
+        String nombreTienda = this.txtNombreCliente.getText().trim();
+        String direccionCliente = this.txtDireccionCliente.getText().trim();
+
+        String respuesta = ctrCliente.UpdtateCliente(idCliente, nombreTienda, direccionCliente);
+
+        if (respuesta.equals("ok")) {
+            ctrCliente.llenatablaClientes(this.jtblClientes);
+             limpiarFieldsCliente();
+        }
+    }//GEN-LAST:event_btnEditarClienteActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+       int idProducto = Integer.parseInt(this.txtIdProducto.getText().trim());
+        String descProducto = this.txtDescripcion.getText().trim();
+        int precioProducto = Integer.parseInt(this.txtPrecio.getText().trim());
+
+        String respuesta = ctrProductos.AgregarNuevoProducto(idProducto, descProducto, precioProducto);
+
+        if (respuesta.equals("ok")) {
+            ctrProductos.llenarTablaProductos(this.jtblProductos);
+            limpiarFieldsProducto();
+        }
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        int idProducto = Integer.parseInt(this.txtIdProducto.getText().trim());
+
+        String respuesta = ctrProductos.DeleteProducto(idProducto);
+
+        if (respuesta.equals("ok")) {
+            ctrProductos.llenarTablaProductos(this.jtblProductos);
+            limpiarFieldsProducto();
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        int idProducto = Integer.parseInt(this.txtIdProducto.getText().trim());
+        String descProducto = this.txtDescripcion.getText().trim();
+        int precioProducto = Integer.parseInt(this.txtPrecio.getText().trim());
+
+        String respuesta = ctrProductos.UpdateProdcuto(idProducto, descProducto, precioProducto);
+
+        if (respuesta.equals("ok")) {
+            ctrProductos.llenarTablaProductos(this.jtblProductos);
+             limpiarFieldsProducto();
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnAgregarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEmpleadoActionPerformed
+            
+    }//GEN-LAST:event_btnAgregarEmpleadoActionPerformed
+
+    private void btnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarEmpleadoActionPerformed
+
+    private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
+
+    private void jcbxTiendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxTiendasActionPerformed
+            System.out.println(jcbxTiendas.getSelectedItem().toString());
+            ctrEmpleados.llenaGrupoCbx(jcbxGrupos, jcbxTiendas.getSelectedItem().toString());
+    }//GEN-LAST:event_jcbxTiendasActionPerformed
+
+    public void limpiarFieldsProducto(){
+        this.txtDescripcion.setText("");
+        this.txtIdProducto.setText("");
+        this.txtPrecio.setText("");
+    }
     public static void main(String args[]) {
 
         try {
@@ -650,21 +829,19 @@ public class Citas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnAgregarCliente;
+    private javax.swing.JButton btnAgregarEmpleado;
     private javax.swing.JButton btnAgregarTienda;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEditarCliente;
+    private javax.swing.JButton btnEditarEmpleado;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarCliente;
+    private javax.swing.JButton btnEliminarEmpleado;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -691,20 +868,22 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JComboBox<String> jcbxGrupos;
+    private javax.swing.JComboBox<String> jcbxTiendas;
     private javax.swing.JLabel jlbTitulo;
     private javax.swing.JTable jtblClientes;
     private javax.swing.JTable jtblEmpleados;
     private javax.swing.JTable jtblProductos;
     private javax.swing.JTable jtblTiendas;
     private javax.swing.JTabbedPane panelPrincipal;
+    private javax.swing.JTextField txtDescripcion;
+    private javax.swing.JTextField txtDireccionCliente;
+    private javax.swing.JTextField txtIdCliente;
+    private javax.swing.JTextField txtIdProducto;
+    private javax.swing.JTextField txtNombreCliente;
+    private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtTiendaId;
     private javax.swing.JTextField txtTiendaNombre;
     // End of variables declaration//GEN-END:variables
