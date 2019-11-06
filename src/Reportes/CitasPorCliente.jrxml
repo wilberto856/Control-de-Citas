@@ -7,16 +7,27 @@
 		<defaultValueExpression><![CDATA["F:\\Administrator\\Documents\\NetBeansProjects\\ControlCitas\\src\\Reportes\\"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * FROM citas.tienda]]>
+		<![CDATA[SELECT * FROM CITAS.CLIENTE]]>
 	</queryString>
-	<field name="IDTIENDA" class="java.math.BigDecimal"/>
+	<field name="IDCLIENTE" class="java.math.BigDecimal"/>
 	<field name="NOMBRE" class="java.lang.String"/>
-	<group name="Tiendas">
+	<field name="DIRECCION" class="java.lang.String"/>
+	<group name="ClientesCitas">
 		<groupExpression><![CDATA[$F{NOMBRE}]]></groupExpression>
 		<groupHeader>
-			<band height="27">
+			<band height="22">
+				<rectangle radius="10">
+					<reportElement x="0" y="0" width="555" height="20" backcolor="#000000"/>
+				</rectangle>
 				<textField>
-					<reportElement x="228" y="0" width="100" height="20"/>
+					<reportElement x="199" y="0" width="32" height="20" forecolor="#FFFFFF"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{IDCLIENTE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="241" y="0" width="100" height="20" forecolor="#FFFFFF"/>
 					<textElement>
 						<font isBold="true"/>
 					</textElement>
@@ -24,40 +35,34 @@
 				</textField>
 			</band>
 		</groupHeader>
-		<groupFooter>
-			<band height="50"/>
-		</groupFooter>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="57" splitType="Stretch">
+		<band height="45" splitType="Stretch">
 			<staticText>
-				<reportElement x="102" y="18" width="313" height="20"/>
-				<textElement textAlignment="Center">
+				<reportElement x="199" y="0" width="142" height="20"/>
+				<textElement>
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[Reporte Empleados por tienda]]></text>
+				<text><![CDATA[Reporte Citas por Cliente]]></text>
 			</staticText>
 		</band>
 	</title>
 	<detail>
-		<band height="26" splitType="Stretch">
+		<band height="53" splitType="Stretch">
 			<rectangle radius="10">
-				<reportElement x="0" y="0" width="555" height="26"/>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="3" width="555" height="50"/>
 			</rectangle>
 			<subreport>
-				<reportElement x="0" y="0" width="555" height="25"/>
-				<subreportParameter name="Tienda">
-					<subreportParameterExpression><![CDATA[$F{NOMBRE}]]></subreportParameterExpression>
+				<reportElement x="0" y="3" width="555" height="46"/>
+				<subreportParameter name="idCliente">
+					<subreportParameterExpression><![CDATA[$F{IDCLIENTE}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "SubReportEmpleados.jasper"]]></subreportExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "SubReportCitaPorCliente.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
