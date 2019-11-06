@@ -833,9 +833,7 @@ public class Citas extends javax.swing.JFrame {
             }
                 
         }
-        
-        
-        
+     
     }//GEN-LAST:event_btnAgregarEmpleadoActionPerformed
 
     private void jcbxTiendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxTiendasActionPerformed
