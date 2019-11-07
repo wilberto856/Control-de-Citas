@@ -1024,7 +1024,7 @@ public class Citas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarEmpleadoActionPerformed
 
     private void jcbxTiendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbxTiendasActionPerformed
-            
+            if(jcbxGrupos.getItemCount() == 1)
             ctrEmpleados.llenaGrupoCbx(jcbxGrupos, jcbxTiendas.getSelectedItem().toString());
     }//GEN-LAST:event_jcbxTiendasActionPerformed
 
