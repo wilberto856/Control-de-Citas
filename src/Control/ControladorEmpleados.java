@@ -69,6 +69,7 @@ public class ControladorEmpleados {
                     Statement st = con.createStatement()) {
                 ResultSet rs = st.executeQuery(sql);
                 while (rs.next()) {
+                    
                     jcbxTiendas.addItem(rs.getString("nombre"));
                 }
 

@@ -25,6 +25,24 @@ public class Citas extends javax.swing.JFrame {
 
         panelPrincipal = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jtblCitas = new javax.swing.JTable();
+        jLabel16 = new javax.swing.JLabel();
+        txtIdCita = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtFechaInicio = new javax.swing.JTextField();
+        txtFechaFin = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        cbxProducto = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        cbxCliente = new javax.swing.JComboBox<>();
+        cbxGrupo = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        cbxTotal = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtblTiendas = new javax.swing.JTable();
@@ -95,15 +113,150 @@ public class Citas extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("NUEVAS CITAS");
+        jLabel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jtblCitas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jtblCitas);
+
+        jLabel16.setText("IDCita:");
+
+        jLabel19.setText("Fecha Inicio Trabajos:");
+
+        jLabel20.setText("Producto:");
+
+        cbxProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Producto" }));
+
+        jLabel21.setText("Cliente:");
+
+        cbxCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Cliente" }));
+
+        cbxGrupo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Grupo" }));
+
+        jLabel22.setText("Grupo");
+
+        cbxTotal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Total" }));
+
+        jLabel23.setText("TOTAL");
+
+        jLabel24.setText("Fecha Fin Trabajos");
+
+        jButton6.setText("AGREGAR");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 930, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(41, 41, 41)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jLabel24)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(txtFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jLabel20)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(cbxProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jLabel22)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(cbxGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jLabel23)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(cbxTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jLabel21)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(cbxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(jLabel16)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jLabel19)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(txtIdCita, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 86, Short.MAX_VALUE))
+                                            .addComponent(txtFechaInicio))))
+                                .addGap(107, 107, 107))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(164, 164, 164)
+                                .addComponent(jButton6)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 604, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(txtIdCita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(cbxProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21)
+                            .addComponent(cbxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbxGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbxTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23))
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton6)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         panelPrincipal.addTab("Nueva Cita", jPanel2);
@@ -225,7 +378,7 @@ public class Citas extends javax.swing.JFrame {
                 .addComponent(jlbTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -348,7 +501,7 @@ public class Citas extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                                         .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(163, 163, 163))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnAgregarCliente)
                                 .addGap(18, 18, 18)
@@ -363,10 +516,6 @@ public class Citas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -385,7 +534,11 @@ public class Citas extends javax.swing.JFrame {
                             .addComponent(btnAgregarCliente)
                             .addComponent(btnEliminarCliente)
                             .addComponent(btnEditarCliente))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
         );
 
         panelPrincipal.addTab("Clientes", jPanel4);
@@ -473,7 +626,7 @@ public class Citas extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(77, 77, 77)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(190, 190, 190)
@@ -516,7 +669,7 @@ public class Citas extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jtblEmpleados);
 
-        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 113, 494, 480));
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 494, 420));
 
         jLabel13.setText("ID Empleado:");
         jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(562, 164, -1, -1));
@@ -643,7 +796,7 @@ public class Citas extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         panelPrincipal.addTab("Reportes", jPanel3);
@@ -656,7 +809,7 @@ public class Citas extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -677,6 +830,15 @@ public class Citas extends javax.swing.JFrame {
 
         switch (panel) {
             case 0:
+                ctrNuevaCita.llenarTablaCita(this.jtblCitas);
+                if(this.cbxProducto.getItemCount()==1){
+                    ctrNuevaCita.llenacbxProducto(this.cbxProducto);
+                    ctrNuevaCita.llenacbxCliente(this.cbxCliente);
+                    ctrNuevaCita.llenacbxGrupo(this.cbxGrupo);
+                    ctrNuevaCita.llenacbxtotal(this.cbxTotal);
+                }
+                
+                break;
 
             case 1:
                 ctr.llenatablaTiendas(this.jtblTiendas);
@@ -689,12 +851,11 @@ public class Citas extends javax.swing.JFrame {
                 break;
             case 4:
                 ctrEmpleados.llenarTablaEmpleados(this.jtblEmpleados);
-                ctrEmpleados.llenaTiendasCbx(this.jcbxTiendas);
+                if(jcbxTiendas.getItemCount() == 1)
+                    ctrEmpleados.llenaTiendasCbx(this.jcbxTiendas);                
                 break;
-            case 5:
-               
-                break;
-            case 6:
+           
+            
                 
                 
 
@@ -887,6 +1048,21 @@ public class Citas extends javax.swing.JFrame {
         ctrReportes.viewReport(5);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        int idcita = Integer.parseInt(this.txtIdCita.getText().trim());
+        String fechainicio = this.txtFechaInicio.getText();
+        String fechafin = this.txtFechaFin.getText();
+        String producto = this.cbxProducto.getSelectedItem().toString();
+        String cliente = this.cbxCliente.getSelectedItem().toString();
+                String grupo = this.cbxGrupo.getSelectedItem().toString();
+                        int total = Integer.parseInt(this.cbxTotal.getSelectedItem().toString());
+                        
+        String respuesta = ctrNuevaCita.agregarCita(idcita, fechainicio, fechafin, producto, cliente, grupo, total);
+        if(respuesta.equals("ok")){
+            ctrNuevaCita.llenarTablaCita(this.jtblCitas);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     public void limpiarFieldsProducto(){
         this.txtDescripcion.setText("");
         this.txtIdProducto.setText("");
@@ -935,20 +1111,33 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarEmpleado;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JComboBox<String> cbxCliente;
+    private javax.swing.JComboBox<String> cbxGrupo;
+    private javax.swing.JComboBox<String> cbxProducto;
+    private javax.swing.JComboBox<String> cbxTotal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -966,9 +1155,11 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JComboBox<String> jcbxGrupos;
     private javax.swing.JComboBox<String> jcbxTiendas;
     private javax.swing.JLabel jlbTitulo;
+    private javax.swing.JTable jtblCitas;
     private javax.swing.JTable jtblClientes;
     private javax.swing.JTable jtblEmpleados;
     private javax.swing.JTable jtblProductos;
@@ -976,6 +1167,9 @@ public class Citas extends javax.swing.JFrame {
     private javax.swing.JTabbedPane panelPrincipal;
     private javax.swing.JTextField txtDescripcion;
     private javax.swing.JTextField txtDireccionCliente;
+    private javax.swing.JTextField txtFechaFin;
+    private javax.swing.JTextField txtFechaInicio;
+    private javax.swing.JTextField txtIdCita;
     private javax.swing.JTextField txtIdCliente;
     private javax.swing.JTextField txtIdProducto;
     private javax.swing.JTextField txtNombreCliente;
